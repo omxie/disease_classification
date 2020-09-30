@@ -1,3 +1,14 @@
 <resources>
-    
+    <string name="app_name">Disease Classification</string>
+    <string name="mtitle">Melanoma Image Classification</string>
+    <string name="mdesc">Opens phone\'s camera to identify between malignant and a non-malignant melanoma.</string>
+    <string name="mq1">What is Melanoma?</string>
+    <string name="mans1">Melanoma occurs when the pigment-producing cells that give colour to the skin become cancerous. Melanoma develops from skin cells called Melanocytes. These are found in the deeper layers of the skin and produce a protein called melanin. Melanin protects the skin by absorbing harmful ultraviolet (UV) radiation.</string>
+    <string name="mq2">What are the causes of Melanoma?</string>
+    <string name="mans2">1)Sun Exposure
+    2)Sunbeds</string>
+    <string name="mq3">Facts about Melanoma:</string>
+    <string name="mans3">1) New Zealand and Australia have the highest rates of melanoma in the world.
+    2) Melanoma is the fourth most common cancer diagnosed in New Zealand.
+    3) Māori and Pacific people have a much lower chance of getting melanoma, but often have thicker (more serious) melanomas.</string>
 </resources>
