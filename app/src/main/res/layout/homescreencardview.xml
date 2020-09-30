@@ -42,15 +42,16 @@
             android:layout_height="match_parent"
             android:textColor="#3E3E3E"
             android:textSize="20sp" />
+
         <TextView
             android:id="@+id/textCardDesc"
-            android:layout_weight="0.5"
-            android:gravity="top"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:gravity="top"
             android:textColor="@android:color/darker_gray"
-            android:textStyle="italic"
-            android:textSize="13sp"/>
+            android:textSize="13sp"
+            android:textStyle="italic" />
 
     </LinearLayout>
     </LinearLayout>

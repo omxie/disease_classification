@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        cardItems.add(new CardItems(R.drawable.ic_diagnosis, "melanoma image classification", "Opens phone's camera to identify between malignant and non-malignant Melanoma"));
+        cardItems.add(new CardItems(R.drawable.ic_skin_, "melanoma image classification", "Opens phone's camera to identify between malignant and non-malignant Melanoma"));
         cardItems.add(new CardItems(R.drawable.ic_eye, "eye defect image classification", "Opens phone's camera to identify whether eye defect is present"));
         rcycleList = findViewById(R.id.rcycleCards);
         rcycleList.setHasFixedSize(true);
