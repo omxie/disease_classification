@@ -1,6 +1,8 @@
 package com.example.diseaseclassification;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -25,6 +27,11 @@ import java.util.ArrayList;
 import java.util.logging.Handler;
 
 public class MainActivity extends AppCompatActivity {
+    private RecyclerView rcycleList;
+    private RecyclerView.Adapter rcycleAdapter;
+    private RecyclerView.LayoutManager rcycleLayoutManager;
+    ArrayList<CardItems> cardItems = new ArrayList<>();
+
 
     private SharedPreferences pref;
     private SharedPreferences.Editor editor;
@@ -39,19 +46,21 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        email = (EditText)findViewById(R.id.bemail);
+        cardItems.add(new CardItems(R.drawable.ic_diagnosis, "melanoma image classification", "Opens phone's camera to identify between malignant and non-malignant Melanoma"));
+        cardItems.add(new CardItems(R.drawable.ic_eye, "eye defect image classification", "Opens phone's camera to identify whether eye defect is present"));
+        rcycleList = findViewById(R.id.rcycleCards);
+        rcycleList.setHasFixedSize(true);
+        rcycleLayoutManager = new LinearLayoutManager(this);
+        rcycleAdapter = new CardsAdapter(cardItems);
+
+        rcycleList.setLayoutManager(rcycleLayoutManager);
+        rcycleList.setAdapter(rcycleAdapter);
+
+        /*email = (EditText)findViewById(R.id.bemail);
         epass = (EditText) findViewById(R.id.bpass);
-        btnlog = (Button) findViewById(R.id.blog);
+       btnlog = (Button) findViewById(R.id.blog);
 
-        ImageView img = (ImageView) findViewById(R.id.imgc);
-        TextView txt = (TextView) findViewById(R.id.tvc);
-
-        int Imgres = getResources().getIdentifier("@drawable/ic_diagnosis", null, this.getPackageName());
-        img.setImageResource(Imgres);
-        txt.setText("MELANOMA DISEASE CLASSIFICATION");
-
-
-        btnlog.setOnClickListener(new View.OnClickListener() {
+      btnlog.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -62,6 +71,11 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+        */
+
+
+
     }
 
 
