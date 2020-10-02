@@ -35,4 +35,12 @@
     <string name="msteps">Most importantly: Do Not Panic.\n
     Melanoma is curable in its initial stages.\n
     Book an appointment at your nearest hospital and get tested as soon as you can.</string>
+
+    <string name="faq1">Q.1) Does this application save the captured pictures?</string>
+    <string name="fans1">We respect the privacy of users and do not save the captured photos by any means.</string>
+    <string name="faq2">Q.2) Will the application include more categories of disease classification?</string>
+    <string name="fans2">Yes, in future with the available public datasets it is possible to include more categories.</string>
+    <string name="faq3">Q.3) Can the application run without internet access?</string>
+    <string name="fans3">Yes, the compact machine learning models used, run on users mobile device and not on the cloud making it available offline.</string>
+
 </resources>
