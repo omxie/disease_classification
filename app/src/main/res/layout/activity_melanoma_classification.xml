@@ -33,13 +33,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
+
                     <TextView
                         android:id="@+id/txtTitle"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:layout_weight="0.50"
                         android:gravity="bottom"
                         android:text="@string/mtitle"
-                        android:layout_weight="0.50"/>
+                        android:textSize="24sp" />
                     <TextView
                         android:id="@+id/txtDesc"
                         android:layout_width="match_parent"
@@ -58,28 +60,30 @@
             android:layout_height="match_parent"
             android:layout_weight="0.27"
             android:weightSum="1">
-        <Button
-            android:layout_weight="0.15"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Open Camera"
-            android:background="@drawable/custom_btn1"
-            />
 
-        <TextView
-            android:layout_weight="0.16"
-            android:id="@+id/txtq1"
-            android:text="@string/mq1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:textStyle="bold"/>
-        <TextView
-            android:layout_weight="0.11"
-            android:id="@+id/txtans1"
-            android:text="@string/mans1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:textStyle="italic"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.15"
+                android:background="@drawable/custom_btn1"
+                android:text="Open Camera"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/txtq1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.16"
+                android:text="@string/mq1"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtans1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.11"
+                android:text="@string/mans1"
+                android:textStyle="italic" />
 
         <TextView
             android:layout_weight="0.16"

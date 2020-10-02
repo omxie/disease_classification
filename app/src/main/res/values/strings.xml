@@ -5,10 +5,30 @@
     <string name="mq1">What is Melanoma?</string>
     <string name="mans1">Melanoma occurs when the pigment-producing cells that give colour to the skin become cancerous. Melanoma develops from skin cells called Melanocytes. These are found in the deeper layers of the skin and produce a protein called melanin. Melanin protects the skin by absorbing harmful ultraviolet (UV) radiation.</string>
     <string name="mq2">What are the causes of Melanoma?</string>
-    <string name="mans2">1)Sun Exposure
+    <string name="mans2">1)Sun Exposure\n
     2)Sunbeds</string>
     <string name="mq3">Facts about Melanoma:</string>
-    <string name="mans3">1) New Zealand and Australia have the highest rates of melanoma in the world.
-    2) Melanoma is the fourth most common cancer diagnosed in New Zealand.
+    <string name="mans3">1) New Zealand and Australia have the highest rates of melanoma in the world.\n
+    2) Melanoma is the fourth most common cancer diagnosed in New Zealand.\n
     3) Māori and Pacific people have a much lower chance of getting melanoma, but often have thicker (more serious) melanomas.</string>
+
+    <string name="etitle">Eye Defect Image Classification</string>
+    <string name="edesc">Opens phone\'s camera to identify whether eye defect is present.</string>
+    <string name="eq1">What are Eye Defects?</string>
+    <string name="eans1">Eye defects refer to the anomalous behaviour or appearance of the eye. Some of the types of eye defects are bulging eyes, cataracts, crossed eyes, glaucoma, uvetis. </string>
+    <string name="eq2">Can it be cured?</string>
+    <string name="eans2">Yes, eye defects can be cured.</string>
+    <string name="eq3">Symptoms:</string>
+    <string name="eans3">1)Blurry vision\n
+        2)Redness\n
+    3)Light floating spots in the field of vision.\n
+    4)Light sensitivity.\n
+    5)Seeing halos.</string>
+
+    <string name = "eres"> We are sorry to inform you that Eye Defects were detected in the captured sample.</string>
+    <string name="enxt">What are the next steps?</string>
+    <string name="esteps">Most importantly: Do Not Panic.\n
+    Book an appointment at your nearest hospital and get tested as soon as you can.</string>
+
+
 </resources>
