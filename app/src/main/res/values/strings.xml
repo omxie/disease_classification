@@ -25,10 +25,14 @@
     4)Light sensitivity.\n
     5)Seeing halos.</string>
 
-    <string name = "eres"> We are sorry to inform you that Eye Defects were detected in the captured sample.</string>
+    <string name="eres"> We are sorry to inform you that Eye Defects were detected in the captured sample.</string>
     <string name="enxt">What are the next steps?</string>
     <string name="esteps">Most importantly: Do Not Panic.\n
     Book an appointment at your nearest hospital and get tested as soon as you can.</string>
 
-
+    <string name="mres"> We are sorry to inform you that Melanoma were detected in the captured sample.</string>
+    <string name="mnxt">What are the next steps?</string>
+    <string name="msteps">Most importantly: Do Not Panic.\n
+    Melanoma is curable in its initial stages.\n
+    Book an appointment at your nearest hospital and get tested as soon as you can.</string>
 </resources>
