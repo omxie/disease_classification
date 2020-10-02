@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UserProfile">
+
+    <LinearLayout
+        android:weightSum="1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/userImage"
+            android:src="@drawable/ic_person"
+            android:layout_margin="15dp"
+            android:layout_weight="0.22"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <TextView
+            android:id="@+id/UserName"
+            android:layout_weight="0.31"
+            android:text="Default User"
+            android:gravity="center | top"
+            android:textSize="22sp"
+            android:textColor="#000000"
+            android:textAllCaps="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <Button
+            android:id="@+id/ChangePassword"
+            android:layout_weight="0.30"
+            android:background="@drawable/custom_btn1"
+            android:text="Change Password"
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_margin="8dp"
+            android:layout_height="match_parent"/>
+
+        <Button
+            android:id="@+id/DeleteAcc"
+            android:layout_weight="0.30"
+            android:background="@drawable/custom_btn1"
+            android:text="Delete Account"
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_margin="8dp"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
