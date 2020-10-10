@@ -43,7 +43,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginRight="60dp"
                 android:layout_weight="0.33"
-                android:hint="UserName"
+                android:hint="@string/username"
                 android:textAlignment="center"
                 android:textColorHint="#3E3E3E" />
 
@@ -55,7 +55,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginRight="60dp"
                 android:layout_weight="0.33"
-                android:hint="Password"
+                android:hint="@string/password"
                 android:inputType="textPassword"
                 android:textAlignment="center"
                 android:textColorHint="#3E3E3E" />
@@ -71,14 +71,14 @@
                 android:layout_weight="0.33"
                 android:textColor="#3E3E3E"
                 android:background="@drawable/custom_btn1"
-                android:text="Login" />
+                android:text="@string/login" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="0.35"
+            android:layout_weight="0.45"
             android:orientation="horizontal">
 
             <Button
@@ -86,26 +86,26 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginRight="20dp"
-                android:layout_marginBottom="150dp"
+                android:layout_marginBottom="10dp"
                 android:layout_weight="0.5"
                 android:textColor="#3E3E3E"
                 android:background="@drawable/custom_btn1"
-                android:text="Sign Up" />
+                android:text="@string/sign_up" />
 
             <Button
                 android:id="@+id/btnSkip"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginRight="20dp"
-                android:layout_marginBottom="150dp"
+                android:layout_marginBottom="10dp"
                 android:layout_weight="0.5"
                 android:textColor="#3E3E3E"
                 android:background="@drawable/custom_btn1"
-                android:text="Skip" />
+                android:text="@string/skip" />
 
         </LinearLayout>
 

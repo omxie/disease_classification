@@ -42,5 +42,10 @@
     <string name="fans2">Yes, in future with the available public datasets it is possible to include more categories.</string>
     <string name="faq3">Q.3) Can the application run without internet access?</string>
     <string name="fans3">Yes, the compact machine learning models used, run on users mobile device and not on the cloud making it available offline.</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="skip">Skip</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="username">UserName</string>
 
 </resources>
