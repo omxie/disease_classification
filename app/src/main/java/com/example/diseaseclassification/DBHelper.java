@@ -50,15 +50,19 @@ public class DBHelper extends SQLiteOpenHelper {
         SQLiteDatabase MyDB = this.getWritableDatabase();
         Cursor cursor = MyDB.rawQuery("Select * from users where username = ?", new String[] {username});
 
-        if (cursor.getCount() >0) {
-            bcryptHashString = cursor.getString(1);
+        if (cursor != null && cursor.moveToFirst()) {
+            bcryptHashString = cursor.getString(cursor.getColumnIndex("password"));
             BCrypt.Result result = BCrypt.verifyer().verify(password.toCharArray(), bcryptHashString);
             if (result.verified == true)
                 return true;
-            else
+            else{
+                cursor.close();
                 return false;
-        }else
+            }
+        }else {
+            cursor.close();
             return false;
+        }
     }
 
 
