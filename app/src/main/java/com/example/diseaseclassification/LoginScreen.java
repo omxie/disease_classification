@@ -3,6 +3,7 @@ package com.example.diseaseclassification;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -14,10 +15,18 @@ public class LoginScreen extends AppCompatActivity {
     EditText pass;
     Button btnLogin, btnSignup, btnSkip;
     DBHelper DB;
+    public static final String SHARED_PREFS = "sharedPrefs";
+    public static final String field_uname = "default";
+    public static final String field_hash = "default";
+    //private SharedPreferences pref;
+    //private SharedPreferences.Editor editor;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_screen);
+
+        cookieLogin();
 
         uname = (EditText) findViewById(R.id.txtUsername);
         pass = (EditText) findViewById(R.id.txtPass);
@@ -38,6 +47,7 @@ public class LoginScreen extends AppCompatActivity {
                     Boolean checkusernamepass = DB.checkUsernamePass(user, password);
                     if (checkusernamepass == true){
                         Toast.makeText(LoginScreen.this, "Sign In successfull", Toast.LENGTH_SHORT).show();
+
                         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                         startActivity(intent);
                     }else
@@ -72,5 +82,18 @@ public class LoginScreen extends AppCompatActivity {
         });
 
 
+    }
+
+    private void cookieLogin() {
+
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
+        String user_name = sharedPreferences.getString(field_uname, "");
+        String hashed_pass = sharedPreferences.getString(field_hash, "");
+
+        if (user_name.equals("") || hashed_pass.equals("")) return;
+        else {
+            Intent intent = new Intent(LoginScreen.this, MainActivity.class );
+            startActivity(intent);
+        }
     }
 }

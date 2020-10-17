@@ -33,8 +33,7 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<CardItems> cardItems = new ArrayList<>();
 
 
-    private SharedPreferences pref;
-    private SharedPreferences.Editor editor;
+
     private EditText email, epass;
     private Button btnlog;
     private CheckBox chkbx;
