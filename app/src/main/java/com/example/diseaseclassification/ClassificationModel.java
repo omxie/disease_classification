@@ -32,7 +32,7 @@ public class ClassificationModel {
     //bypass normalisation
     private static final float IMAGE_STD = 1.0f;
     private static final float IMAGE_MEAN = 0.0f;
-    private static final int MAX_SIZE = 5;
+    private static final int MAX_SIZE = 1;
 
     //X-axis image size
     private final int imageResizeX;

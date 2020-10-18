@@ -77,9 +77,20 @@ public class MelanomaClassification extends AppCompatActivity {
             // creating a list of string to display in list view
             final List<String> predicitonsList = new ArrayList<>();
             for (ClassificationModel.Recognition recog : predicitons) {
-                predicitonsList.add(recog.getName() + " : " + recog.getConfidence());
-                Log.d(TAG, "onActivityResult: ");
+                predicitonsList.add(recog.getName());
+                //predicitonsList.add(recog.getName() + " : " + recog.getConfidence());
+                if ((predicitonsList.get(0)).equals("Benign")){
+                    //Benign = Melanoma is not cancerous.
+                    Intent intent = new Intent(MelanomaClassification.this, MelanomaResults.class );
+                    startActivity(intent);
+                }else {
+                    //Malignant = Melanoma is cancerous.
+                    Intent intent = new Intent(MelanomaClassification.this, MelanomaResults.class );
+                    startActivity(intent);
+                }
             }
+            Log.d(TAG, "onActivityResult: Outside Loop "+predicitonsList.get(0));
+
             // creating an array adapter to display the classification result in list view
             //ArrayAdapter<String> predictionsAdapter = new ArrayAdapter<>(
              //       this, R.layout.support_simple_spinner_dropdown_item, predicitonsList);
