@@ -2,6 +2,7 @@ package com.example.diseaseclassification;
 
 import android.app.Activity;
 import android.graphics.Bitmap;
+import android.os.AsyncTask;
 
 import org.tensorflow.lite.DataType;
 import org.tensorflow.lite.Interpreter;
@@ -55,14 +56,25 @@ public class ClassificationModel {
 
 
     //classifier
-    public ClassificationModel(Activity activity) throws IOException {
-        /*
-         * The loaded TensorFlow Lite model.
-         */
+    public ClassificationModel(Activity activity, Boolean category) throws IOException {
+
+        String model_name, label_name;
+
+        if(category == true){
+            model_name = "model.tflite";
+            label_name = "labels.txt";
+        }else{
+            model_name = "eye_model.tflite";
+            label_name = "eye_labels.txt";
+        }
+
+        //The loaded TensorFlow Lite model
         MappedByteBuffer classifierModel = FileUtil.loadMappedFile(activity,
                 "model.tflite");
         // Loads labels out from the label file.
         labels = FileUtil.loadLabels(activity, "labels.txt");
+
+
         tensorClassifier = new Interpreter(classifierModel, null);
         // Reads type and shape of input and output tensors, respectively. [START]
         int imageTensorIndex = 0; // input
@@ -117,6 +129,8 @@ public class ClassificationModel {
                 .build();
         return imageProcessor.process(inputImageBuffer);
     }
+
+
     /**
      * An immutable result returned by a Classifier describing what was recognized.
      */

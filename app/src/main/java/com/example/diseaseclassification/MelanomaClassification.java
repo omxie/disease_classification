@@ -44,9 +44,9 @@ public class MelanomaClassification extends AppCompatActivity {
     }
 
     private void initializeUIElements() {
-
+        Boolean category =  true;
         try {
-            imageClassifier = new ClassificationModel(this);
+            imageClassifier = new ClassificationModel(this, category);
         } catch (IOException e) {
             Log.e("Image Classifier Error", "ERROR: " + e);
         }
