@@ -4,12 +4,4 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SplashScreen">
-
-    <ImageView
-        android:id="@+id/splashView"
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:layout_centerVertical="true"
-        tools:srcCompat="@tools:sample/avatars[4]" />
-</RelativeLayout>
+    tools:context=".SplashScreen"/>

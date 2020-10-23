@@ -2,8 +2,12 @@ package com.example.diseaseclassification;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
+
+import gr.net.maroulis.library.EasySplashScreen;
 
 public class SplashScreen extends AppCompatActivity {
 
@@ -12,10 +16,18 @@ public class SplashScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
 
-        ImageView splashImg = (ImageView) findViewById(R.id.splashView);
-        int logoImg = getResources().getIdentifier("@drawable/ic_diagnosis", null, this.getPackageName());
-        splashImg.setImageResource(logoImg);
 
+        int logoImg = getResources().getIdentifier("@drawable/ic_diagnosis", null, this.getPackageName());
+        EasySplashScreen config = new EasySplashScreen(SplashScreen.this)
+                .withFullScreen()
+                .withTargetActivity(LoginScreen.class)
+                .withSplashTimeOut(3000)
+                .withLogo(R.drawable.ic_diagnosis);
+
+        config.getLogo().setMaxHeight(575);
+        config.getLogo().setMaxWidth(575);
+        View easySplashScreen = config.create();
+        setContentView(easySplashScreen);
 
     }
 }
