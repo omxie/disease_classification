@@ -33,7 +33,7 @@ public class ClassificationModel {
     //bypass normalisation
     private static final float IMAGE_STD = 1.0f;
     private static final float IMAGE_MEAN = 0.0f;
-    private static final int MAX_SIZE = 1;
+    public int MAX_SIZE = 1;
 
     //X-axis image size
     private final int imageResizeX;
@@ -56,23 +56,24 @@ public class ClassificationModel {
 
 
     //classifier
+    //passing activity and boolean to identify which model to utilise.
     public ClassificationModel(Activity activity, Boolean category) throws IOException {
 
         String model_name, label_name;
 
         if(category == true){
-            model_name = "model.tflite";
-            label_name = "labels.txt";
+            model_name = "melanoma_model.tflite";
+            label_name = "melanoma_labels.txt";
         }else{
+            MAX_SIZE = 4;
             model_name = "eye_model.tflite";
             label_name = "eye_labels.txt";
         }
 
         //The loaded TensorFlow Lite model
-        MappedByteBuffer classifierModel = FileUtil.loadMappedFile(activity,
-                "model.tflite");
+        MappedByteBuffer classifierModel = FileUtil.loadMappedFile(activity, model_name);
         // Loads labels out from the label file.
-        labels = FileUtil.loadLabels(activity, "labels.txt");
+        labels = FileUtil.loadLabels(activity, label_name);
 
 
         tensorClassifier = new Interpreter(classifierModel, null);
@@ -131,17 +132,13 @@ public class ClassificationModel {
     }
 
 
-    /**
-     * An immutable result returned by a Classifier describing what was recognized.
-     */
+
+    // An immutable result returned by a Classifier describing what was recognized.
+
     public class Recognition implements Comparable {
-        /**
-         * Display name for the recognition.
-         */
+        // Display name for the recognition.
         private String name;
-        /**
-         * A sortable score for how good the recognition is relative to others. Higher should be better.
-         */
+        // A sortable score for how good the recognition is relative to others. Higher should be better.
         private float confidence;
         public Recognition() {
         }
@@ -173,4 +170,8 @@ public class ClassificationModel {
             return Float.compare(((Recognition) o).confidence, this.confidence);
         }
     }
+
+
+
+
 }

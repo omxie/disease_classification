@@ -32,8 +32,6 @@ public class MelanomaClassification extends AppCompatActivity {
     private ClassificationModel imageClassifier;
 
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -91,10 +89,6 @@ public class MelanomaClassification extends AppCompatActivity {
             }
             Log.d(TAG, "onActivityResult: Outside Loop "+predicitonsList.get(0));
 
-            // creating an array adapter to display the classification result in list view
-            //ArrayAdapter<String> predictionsAdapter = new ArrayAdapter<>(
-             //       this, R.layout.support_simple_spinner_dropdown_item, predicitonsList);
-            //listView.setAdapter(predictionsAdapter);
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
