@@ -1,4 +1,6 @@
 <resources>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
     <string name="app_name">Disease Classification</string>
     <string name="mtitle">Melanoma Image Classification</string>
     <string name="mdesc">Opens phone\'s camera to identify between malignant and a non-malignant melanoma.</string>
