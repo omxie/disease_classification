@@ -59,7 +59,7 @@ public class SignInScreen extends AppCompatActivity {
                                 SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
                                 SharedPreferences.Editor editor = sharedPreferences.edit();
                                 editor.putString(field_uname, user);
-                                editor.putString(field_hash,bcryptHashString);
+                                editor.putString(field_hash, bcryptHashString);
                                 editor.apply();
 
                                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
@@ -80,5 +80,18 @@ public class SignInScreen extends AppCompatActivity {
             }
         });
 
+    }
+
+    int counter=0;
+    @Override
+    public void onBackPressed() {
+        counter++;
+        if (counter == 1){
+            Toast.makeText(this, "Press again to exit", Toast.LENGTH_SHORT).show();
+        }else if(counter == 2){
+            moveTaskToBack(true);
+            //android.os.Process.killProcess(android.os.Process.myPid());
+            System.exit(1);
+        }
     }
 }

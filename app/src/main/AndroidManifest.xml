@@ -15,9 +15,10 @@
         <activity android:name=".EyeDefectsClassification" />
         <activity android:name=".MelanomaClassification" />
         <activity android:name=".SignInScreen" />
-        <activity android:name=".SplashScreen" />
+        <activity android:name=".LoginScreen" />
         <activity android:name=".MainActivity"/>
-        <activity android:name=".LoginScreen" >
+        <activity android:name=".faq"/>
+        <activity android:name=".SplashScreen" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

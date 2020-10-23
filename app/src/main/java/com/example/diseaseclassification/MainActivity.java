@@ -1,7 +1,6 @@
 package com.example.diseaseclassification;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -11,27 +10,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.util.Log;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
-import java.util.logging.Handler;
 
 public class MainActivity extends AppCompatActivity {
     private ActionBarDrawerToggle toggle;
@@ -43,6 +30,9 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView.LayoutManager rcycleLayoutManager;
     ArrayList<CardItems> cardItems = new ArrayList<>();
 
+    public static final String SHARED_PREFS = "sharedPrefs";
+    public static final String field_uname = "default";
+    public static final String field_hash = "default";
 
 
     private EditText email, epass;
@@ -84,44 +74,41 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.nav_profile:
-                        Toast.makeText(MainActivity.this, "Profile", Toast.LENGTH_SHORT).show();
+                        Intent intent1 = new Intent(MainActivity.this, UserProfile.class);
+                        startActivity(intent1);
                         return true;
                     case R.id.nav_faq:
-                        Toast.makeText(MainActivity.this, "FAQ", Toast.LENGTH_SHORT).show();
+                        Intent intent2 = new Intent(MainActivity.this, faq.class);
+                        startActivity(intent2);
                         return true;
                     case R.id.nav_share:
-                        Toast.makeText(MainActivity.this, "Share", Toast.LENGTH_SHORT).show();
+                        Intent intent3 = new Intent(Intent.ACTION_SEND);
+                        intent3.setType("text/plain");
+                        String sharebody = "Disease classification";
+                        String subject = "https://www.google.com/";
+                        intent3.putExtra(Intent.EXTRA_SUBJECT, subject);
+                        intent3.putExtra(Intent.EXTRA_TEXT, sharebody);
+                        startActivity(Intent.createChooser(intent3, "Share"));
                         return true;
                     case R.id.nav_logout:
-                        Toast.makeText(MainActivity.this, "Logout", Toast.LENGTH_SHORT).show();
+                        //Removing Cookies
+                        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        editor.remove(field_uname);
+                        editor.remove(field_hash);
+                        editor.apply();
+                        Intent intent4 = new Intent(MainActivity.this, SignInScreen.class);
+                        startActivity(intent4);
                         return true;
                     case R.id.nav_exit:
-                        Toast.makeText(MainActivity.this, "Exit", Toast.LENGTH_SHORT).show();
+                        //moveTaskToBack(true);
+                        //android.os.Process.killProcess(android.os.Process.myPid());
+                        System.exit(1);
                         return true;
                 }
                 return true;
             }
         });
-
-
-
-        /*email = (EditText)findViewById(R.id.bemail);
-        epass = (EditText) findViewById(R.id.bpass);
-       btnlog = (Button) findViewById(R.id.blog);
-
-      btnlog.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent intent = new Intent(MainActivity.this, SplashScreen.class);
-                intent.putExtra("email", email.getText().toString());
-                intent.putExtra("pass", epass.getText().toString());
-                startActivity(intent);
-
-            }
-        });
-
-        */
 
 
 
