@@ -34,7 +34,6 @@ import java.util.ArrayList;
 import java.util.logging.Handler;
 
 public class MainActivity extends AppCompatActivity {
-    private ActionBar actionBar;
     private ActionBarDrawerToggle toggle;
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
@@ -68,7 +67,6 @@ public class MainActivity extends AppCompatActivity {
         rcycleList.setAdapter(rcycleAdapter);
 
         
-        actionBar = getSupportActionBar();
         drawerLayout=findViewById(R.id.drawer_layout);
         navigationView=findViewById(R.id.nav_view);
         toggle=new ActionBarDrawerToggle(MainActivity.this,drawerLayout, R.string.open,R.string.close);
@@ -76,8 +74,9 @@ public class MainActivity extends AppCompatActivity {
         toggle.syncState();
         //AppCompatActivity activity = (AppCompatActivity) getApplicationContext();
 
-        actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setHomeAsUpIndicator(R.drawable.logo);
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.logo);
 
 
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
