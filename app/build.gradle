@@ -1,4 +1,6 @@
 apply plugin: 'com.android.application'
+apply plugin: 'org.sonarqube' // added for sonar qube
+// added for sonar qube
 
 android {
     compileSdkVersion 30
@@ -22,6 +24,20 @@ android {
     }
     aaptOptions {
         noCompress "tflite"
+    }
+}
+
+sonarqube {
+    properties {
+        property "sonar.projectName", "Disease_Classification"
+        property "sonar.projectKey", "Disease_Classification"
+        property "sonar.host.url", "http://localhost:9000"
+        property "sonar.language", "java"
+        property "sonar.sources", "src/main/java"
+        property "sonar.java.sources", "src/main/java"
+        property "sonar.sourceEncoding", "UTF-8"
+        property "sonar.login", "admin"
+        property "sonar.password", "admin"
     }
 }
 

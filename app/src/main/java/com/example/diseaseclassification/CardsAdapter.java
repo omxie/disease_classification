@@ -1,8 +1,6 @@
 package com.example.diseaseclassification;
 
-import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,9 +18,9 @@ public class CardsAdapter extends RecyclerView.Adapter<CardsAdapter.CardItemsVie
 
     public static class CardItemsViewholder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        public ImageView imgView;
-        public TextView txtTitle;
-        public TextView txtDesc;
+        ImageView imgView;
+        TextView txtTitle;
+        TextView txtDesc;
 
         public CardItemsViewholder(@NonNull View itemView) {
             super(itemView);

@@ -45,7 +45,7 @@ public class LoginScreen extends AppCompatActivity {
                     Toast.makeText(LoginScreen.this, "Username and Password should be entered.", Toast.LENGTH_SHORT).show();
                 else{
                     Boolean checkusernamepass = DB.checkUsernamePass(user, password);
-                    if (checkusernamepass == true){
+                    if (checkusernamepass){
                         Toast.makeText(LoginScreen.this, "Sign In successfull", Toast.LENGTH_SHORT).show();
 
                         Intent intent = new Intent(getApplicationContext(), MainActivity.class);

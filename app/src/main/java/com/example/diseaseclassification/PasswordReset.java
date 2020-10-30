@@ -4,17 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class MelanomaResults extends AppCompatActivity {
+public class PasswordReset extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_melanoma_results);
-
-    }
-
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
+        setContentView(R.layout.activity_password_reset);
     }
 }

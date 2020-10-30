@@ -52,7 +52,7 @@ public class SignInScreen extends AppCompatActivity {
                             //Hashing password before storing into the DB
                             String bcryptHashString = BCrypt.withDefaults().hashToString(12, password.toCharArray());
                             Boolean insert = DB.insertData(user, bcryptHashString);
-                            if (insert == true) {
+                            if (insert) {
                                 Toast.makeText(SignInScreen.this, "Registered Sucessfully!", Toast.LENGTH_SHORT).show();
 
                                //Saving Cookies

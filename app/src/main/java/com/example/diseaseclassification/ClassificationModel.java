@@ -2,7 +2,6 @@ package com.example.diseaseclassification;
 
 import android.app.Activity;
 import android.graphics.Bitmap;
-import android.os.AsyncTask;
 
 import org.tensorflow.lite.DataType;
 import org.tensorflow.lite.Interpreter;
@@ -33,7 +32,7 @@ public class ClassificationModel {
     //bypass normalisation
     private static final float IMAGE_STD = 1.0f;
     private static final float IMAGE_MEAN = 0.0f;
-    public int MAX_SIZE = 1;
+    int MAX_SIZE = 1;
 
     //X-axis image size
     private final int imageResizeX;
@@ -61,7 +60,7 @@ public class ClassificationModel {
 
         String model_name, label_name;
 
-        if(category == true){
+        if(category){
             model_name = "melanoma_model.tflite";
             label_name = "melanoma_labels.txt";
         }else{

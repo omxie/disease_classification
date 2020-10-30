@@ -35,10 +35,9 @@ public class MainActivity extends AppCompatActivity {
     public static final String field_hash = "default";
 
 
-    private EditText email, epass;
-    private Button btnlog;
-    private CheckBox chkbx;
-
+    //private EditText email, epass;
+    //private Button btnlog;
+    //private CheckBox chkbx;
 
 
     @Override

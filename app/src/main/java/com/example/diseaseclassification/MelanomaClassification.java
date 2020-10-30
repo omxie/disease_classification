@@ -41,7 +41,7 @@ public class MelanomaClassification extends AppCompatActivity {
         initializeUIElements();
     }
 
-    private void initializeUIElements() {
+    private void initializeUIElements()  {
         Boolean category =  true;
         try {
             imageClassifier = new ClassificationModel(this, category);
@@ -136,4 +136,11 @@ public class MelanomaClassification extends AppCompatActivity {
         }
         return true;
     }
+
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
+
 }
