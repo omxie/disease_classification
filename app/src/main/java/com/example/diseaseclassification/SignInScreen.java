@@ -47,7 +47,7 @@ public class SignInScreen extends AppCompatActivity {
                 else{
                     if (password.equals(repassword)){
                         Boolean checkuser = DB.checkUsername(user);
-                        if (checkuser==false){
+                        if (!checkuser){
 
                             //Hashing password before storing into the DB
                             String bcryptHashString = BCrypt.withDefaults().hashToString(12, password.toCharArray());

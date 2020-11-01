@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
                         editor.remove(field_uname);
                         editor.remove(field_hash);
                         editor.apply();
-                        Intent intent4 = new Intent(MainActivity.this, SignInScreen.class);
+                        Intent intent4 = new Intent(MainActivity.this, LoginScreen.class);
                         startActivity(intent4);
                         return true;
                     case R.id.nav_exit:
