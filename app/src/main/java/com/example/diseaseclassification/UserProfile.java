@@ -17,6 +17,7 @@ public class UserProfile extends AppCompatActivity {
         changePass = findViewById(R.id.ChangePassword);
         delAcc = findViewById(R.id.DeleteAcc);
 
+        //changing pass
         changePass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -25,5 +26,17 @@ public class UserProfile extends AppCompatActivity {
             }
         });
 
+        //deleting account, asks for confirmation
+        delAcc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openDialog();
+            }
+        });
     }
+        public void openDialog(){
+            delDialog dialog = new delDialog();
+            dialog.show(getSupportFragmentManager(), "deleting account");
+        }
+
 }

@@ -76,10 +76,11 @@ public class MelanomaClassification extends AppCompatActivity {
             final List<String> predicitonsList = new ArrayList<>();
             for (ClassificationModel.Recognition recog : predicitons) {
                 predicitonsList.add(recog.getName());
-                //predicitonsList.add(recog.getName() + " : " + recog.getConfidence());
-                if ((predicitonsList.get(0)).equals("Benign")){
+
+                //checks what is the results to show user the appropriate screen
+                if ((predicitonsList.get(0)).equals("0 Benign")){
                     //Benign = Melanoma is not cancerous.
-                    Intent intent = new Intent(MelanomaClassification.this, MelanomaResults.class );
+                    Intent intent = new Intent(MelanomaClassification.this, melanoma_results_nd.class );
                     startActivity(intent);
                 }else {
                     //Malignant = Melanoma is cancerous.

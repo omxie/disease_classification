@@ -35,9 +35,6 @@ public class MainActivity extends AppCompatActivity {
     public static final String field_hash = "default";
 
 
-    //private EditText email, epass;
-    //private Button btnlog;
-    //private CheckBox chkbx;
 
 
     @Override
@@ -45,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //adds recycle vview as cards, more can be added later
         cardItems.add(new CardItems(R.drawable.ic_skin_, "melanoma image classification", "Opens phone's camera to identify between malignant and non-malignant Melanoma"));
         cardItems.add(new CardItems(R.drawable.ic_eye, "eye defect image classification", "Opens phone's camera to identify whether eye defect is present"));
         rcycleList = findViewById(R.id.rcycleCards);
@@ -61,26 +59,26 @@ public class MainActivity extends AppCompatActivity {
         toggle=new ActionBarDrawerToggle(MainActivity.this,drawerLayout, R.string.open,R.string.close);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
-        //AppCompatActivity activity = (AppCompatActivity) getApplicationContext();
+
 
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.logo);
 
-
+        //hamburger menu options
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
-                    case R.id.nav_profile:
+                    case R.id.nav_profile: //shows user profile
                         Intent intent1 = new Intent(MainActivity.this, UserProfile.class);
                         startActivity(intent1);
                         return true;
-                    case R.id.nav_faq:
+                    case R.id.nav_faq: //shows faq screen
                         Intent intent2 = new Intent(MainActivity.this, faq.class);
                         startActivity(intent2);
                         return true;
-                    case R.id.nav_share:
+                    case R.id.nav_share: //for sharing
                         Intent intent3 = new Intent(Intent.ACTION_SEND);
                         intent3.setType("text/plain");
                         String sharebody = "Disease classification";
@@ -89,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
                         intent3.putExtra(Intent.EXTRA_TEXT, sharebody);
                         startActivity(Intent.createChooser(intent3, "Share"));
                         return true;
-                    case R.id.nav_logout:
+                    case R.id.nav_logout: //to logout
                         //Removing Cookies
                         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
                         SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -99,9 +97,7 @@ public class MainActivity extends AppCompatActivity {
                         Intent intent4 = new Intent(MainActivity.this, LoginScreen.class);
                         startActivity(intent4);
                         return true;
-                    case R.id.nav_exit:
-                        //moveTaskToBack(true);
-                        //android.os.Process.killProcess(android.os.Process.myPid());
+                    case R.id.nav_exit: //to kill the app
                         System.exit(1);
                         return true;
                 }

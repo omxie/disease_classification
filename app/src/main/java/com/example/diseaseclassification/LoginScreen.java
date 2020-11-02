@@ -41,11 +41,12 @@ public class LoginScreen extends AppCompatActivity {
                 String user = uname.getText().toString();
                 String password = pass.getText().toString();
 
+                //check whether the textboxes are empty
                 if (user.equals("")||password.equals(""))
                     Toast.makeText(LoginScreen.this, "Username and Password should be entered.", Toast.LENGTH_SHORT).show();
-                else{
+                else{ //if not
                     Boolean checkusernamepass = DB.checkUsernamePass(user, password);
-                    if (checkusernamepass){
+                    if (checkusernamepass){ //if user exists
                         Toast.makeText(LoginScreen.this, "Sign In successfull", Toast.LENGTH_SHORT).show();
 
                         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
@@ -84,6 +85,7 @@ public class LoginScreen extends AppCompatActivity {
 
     }
 
+    //method to login directly from a cookie
     private void cookieLogin() {
 
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);

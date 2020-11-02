@@ -29,6 +29,7 @@ public class DBHelper extends SQLiteOpenHelper {
         MyDB.execSQL("drop Table if exists users");
     }
 
+    //inserts into db
     public Boolean insertData(String username, String password){
         SQLiteDatabase MyDB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -40,16 +41,17 @@ public class DBHelper extends SQLiteOpenHelper {
 
     }
 
+    //verifies username
     public Boolean checkUsername(String username){
         SQLiteDatabase MyDB = this.getWritableDatabase();
         Cursor cursor = MyDB.rawQuery("Select * from users where username = ?", new String[] {username});
-        cursor.close();
         if (cursor.getCount() > 0)
             return true;
         else
             return false;
     }
 
+    //uodates password of user
     public Boolean updatePassword(String username, String password){
         SQLiteDatabase MyDB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -59,6 +61,15 @@ public class DBHelper extends SQLiteOpenHelper {
         else return true;
     }
 
+    //deletes user account
+    public Boolean deleteAccount(String username){
+        SQLiteDatabase MyDB = this.getWritableDatabase();
+        long results = MyDB.delete("users","username= ?",new String[]{username});
+        if (results == -1) return false;
+        else return true;
+    }
+
+    //checks for username and pass from db
     public Boolean checkUsernamePass(String username, String password){
         SQLiteDatabase MyDB = this.getWritableDatabase();
         Cursor cursor = MyDB.rawQuery("Select * from users where username = ?", new String[] {username});
@@ -69,7 +80,6 @@ public class DBHelper extends SQLiteOpenHelper {
             if (result.verified)
                 return true;
             else{
-                cursor.close();
                 return false;
             }
         }else {

@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PasswordReset"></activity>
+        <activity android:name=".melanoma_results_nd"></activity>
+        <activity android:name=".eye_results_nd" />
+        <activity android:name=".AccountDeleted" />
+        <activity android:name=".PasswordReset" />
         <activity android:name=".UserProfile" />
         <activity android:name=".MelanomaResults" />
         <activity android:name=".ClassificationResults" />

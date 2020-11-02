@@ -66,7 +66,6 @@ public class EyeDefectsClassification extends AppCompatActivity {
             // getting bitmap of the image
             Bitmap photo = (Bitmap) Objects.requireNonNull(Objects.requireNonNull(data).getExtras()).get("data");
             // displaying this bitmap in imageview
-            //imageView.setImageBitmap(photo);
             // pass this bitmap to classifier to make prediction
             List<ClassificationModel.Recognition> predicitons = imageClassifier.recognizeImage(
                     photo, 0);
@@ -74,15 +73,16 @@ public class EyeDefectsClassification extends AppCompatActivity {
             final List<String> predicitonsList = new ArrayList<>();
             for (ClassificationModel.Recognition recog : predicitons) {
                 predicitonsList.add(recog.getName());
-                //predicitonsList.add(recog.getName() + " : " + recog.getConfidence());
-                if ((predicitonsList.get(0)).equals("Bulging_Eyes") || (predicitonsList.get(0)).equals("Cataracts") ||
-                        (predicitonsList.get(0)).equals("Crossed_Eyes") || (predicitonsList.get(0)).equals("Glaucoma") || (predicitonsList.get(0)).equals("Uveitis")){
-                    //Benign = Melanoma is not cancerous.
+
+                //checks what is the results to show user the appropriate screen
+                if ((predicitonsList.get(0)).equals("0 Bulging_Eyes") || (predicitonsList.get(0)).equals("1 Cataracts") ||
+                        (predicitonsList.get(0)).equals("2 Crossed_Eyes") || (predicitonsList.get(0)).equals("3 Glaucoma") || (predicitonsList.get(0)).equals("4 Uveitis")){
+                    //disease detected
                     Intent intent = new Intent(EyeDefectsClassification.this, ClassificationResults.class );
                     startActivity(intent);
                 }else {
-                    //Malignant = Melanoma is cancerous.
-                    Intent intent = new Intent(EyeDefectsClassification.this, ClassificationResults.class );
+                    //not detected
+                    Intent intent = new Intent(EyeDefectsClassification.this, eye_results_nd.class );
                     startActivity(intent);
                 }
             }

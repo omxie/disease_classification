@@ -52,7 +52,7 @@ public class CardsAdapter extends RecyclerView.Adapter<CardsAdapter.CardItemsVie
     public CardsAdapter(ArrayList<CardItems> cardlist){
         mCardsList = cardlist;
     }
-
+    //creates a card layout on the home screen
     @NonNull
     @Override
     public CardItemsViewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -61,6 +61,7 @@ public class CardsAdapter extends RecyclerView.Adapter<CardsAdapter.CardItemsVie
         return cvh;
     }
 
+    //sets the items to their corresponding views
     @Override
     public void onBindViewHolder(@NonNull CardItemsViewholder holder, int position) {
         CardItems currentItem = mCardsList.get(position);

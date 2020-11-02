@@ -13,7 +13,7 @@ public class SplashScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
 
-
+        //making splash screen from a library
         int logoImg = getResources().getIdentifier("@drawable/ic_diagnosis", null, this.getPackageName());
         EasySplashScreen config = new EasySplashScreen(SplashScreen.this)
                 .withFullScreen()

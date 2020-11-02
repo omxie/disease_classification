@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".melanoma_results_nd">
+
+    <LinearLayout
+        android:weightSum="1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginLeft="11dp"
+        android:layout_marginRight="11dp">
+
+        <LinearLayout
+            android:layout_weight="0.73"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imglogo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.50"
+                android:layout_margin="15dp"
+                app:srcCompat="@drawable/ic_skin_rotated" />
+
+            <LinearLayout
+                android:layout_weight="0.50"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.50"
+                    android:gravity="bottom"
+                    android:text="@string/mtitle"
+                    android:textSize="24sp" />
+                <TextView
+                    android:id="@+id/txtDesc"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="top"
+                    android:text="@string/mdesc"
+                    android:layout_weight="0.50"/>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.27"
+            android:weightSum="1">
+
+            <Button
+                android:id="@+id/mclassify_re"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.18"
+                android:background="@drawable/custom_btn1"
+                android:text="Open Camera"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/txtq1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="3dp"
+                android:layout_weight="0.18"
+                android:gravity="center | bottom"
+                android:text="Scan Results"
+                android:textAllCaps="true"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/imgView2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="0.145"
+                app:srcCompat="@drawable/ic_congratulation" />
+
+            <TextView
+                android:id="@+id/txtans2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.18"
+                android:gravity="center | top"
+                android:text="Congratulations! Melanoma was not detected in the specified sample."
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/txtq3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.19"
+                android:gravity="center | top"
+                android:text=""
+                android:textSize="18sp"
+                android:textStyle="bold|italic" />
+            <TextView
+                android:layout_weight="0.13"
+                android:id="@+id/txtans3"
+                android:text=""
+                android:gravity="center | top"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textStyle="italic"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
